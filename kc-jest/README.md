@@ -1,4 +1,4 @@
-# Kentico Cloud :hearth: Jest
+# Kentico Cloud :heart: Jest
 
 This project was written from scratch using jus `npm init` command to showcase how to start with [jest](https://jestjs.io) testing framework in combination with [Kentico Cloud Delivery SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery#kentico-cloud-delivery-sdk).
 
