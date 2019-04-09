@@ -6,6 +6,11 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
+    <section v-if="loaded">
+      <ul v-for="article in articles" v-bind:key="article.system.id">
+        <li>{{article.elements.title.value}}</li>
+      </ul>
+    </section>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -31,10 +36,31 @@
 </template>
 
 <script>
+import { DeliveryClient } from 'kentico-cloud-delivery';
+
+const client = new DeliveryClient({ projectId: "975bf280-fd91-488c-994c-2f04416e5ee3" });
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data: function() {
+    return {
+      loaded: false,
+      articles: []
+    };
+  },
+  mounted: function(){
+    client.items()
+      .type("article")
+      .getPromise()
+      .then(result => {
+        // eslint-disable-next-line no-console
+        console.log(result.items);
+        this.articles = result.items;
+        this.loaded = true;
+      });
   }
 }
 </script>
