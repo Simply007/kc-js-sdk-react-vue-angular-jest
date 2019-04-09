@@ -18,5 +18,9 @@
   "homepage": "https://github.com/Simply007/kc-js-sdk-react-vue-angular-jest#readme",
   "devDependencies": {
     "jest": "^24.7.1"
+  },
+  "dependencies": {
+    "kentico-cloud-delivery": "^5.7.2",
+    "rxjs": "^6.4.0"
   }
 }

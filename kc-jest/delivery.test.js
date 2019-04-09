@@ -1,7 +1,15 @@
-describe('Testu suit testing add', () => {
-  it("1+1 is 2", async () => {
-    const result = 1 + 1;
+const { DeliveryClient } = require('kentico-cloud-delivery');
 
-    expect(result).toBe(2);
+describe('Delivery sdk', () => {
+  it("load articles", async () => {
+    const client = new DeliveryClient({ projectId: "975bf280-fd91-488c-994c-2f04416e5ee3" });
+
+    const result = await client.items()
+      .type("article")
+      .getPromise();
+
+    expect(result).toHaveProperty('items');
+    expect(result.items).toHaveLength(6);
+    // expect(result).toMatchSnapshot(); // Just a sample
   })
 })
