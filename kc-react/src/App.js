@@ -30,7 +30,8 @@ class App extends Component {
 
 
   render() {
-    const articles = this.state.articles.map(article => (<li>{article.elements.title.value}</li>));
+    const articles = this.state.articles.map(article => (<li key={article.system.id}>{article.elements.title.value}</li>));
+    
     return (
       <div className="App">
         <header className="App-header">
