@@ -1,0 +1,22 @@
+{
+  "name": "kc-jest",
+  "version": "1.0.0",
+  "description": "Jest example in combination with kentico cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simply007/kc-js-sdk-react-vue-angular-jest.git"
+  },
+  "author": "Ondřej Chrastina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Simply007/kc-js-sdk-react-vue-angular-jest/issues"
+  },
+  "homepage": "https://github.com/Simply007/kc-js-sdk-react-vue-angular-jest#readme",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
