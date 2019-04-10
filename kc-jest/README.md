@@ -63,7 +63,8 @@ This project was written from scratch using jus `npm init` command to showcase h
 
           expect(result).toHaveProperty('items');
           expect(result.items).toHaveLength(6);
-          // expect(result).toMatchSnapshot(); // Just a sample
+          result.items.forEach(item => console.log(item.elements.title.value)); // Just to see the titles in log
+          // expect(result).toMatchSnapshot(); // Just a snapshot sample (https://jestjs.io/docs/en/snapshot-testing)
         })
       })
       ```

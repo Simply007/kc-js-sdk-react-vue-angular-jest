@@ -4,6 +4,7 @@
   "description": "Jest example in combination with kentico cloud",
   "main": "index.js",
   "scripts": {
+    "start": "npm run test",
     "test": "jest"
   },
   "repository": {
