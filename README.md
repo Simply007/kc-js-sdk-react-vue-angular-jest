@@ -1,13 +1,15 @@
 # Kentico Cloud :heart: Jest, React, Vue, and Angular
 
-This repository contains show cases, how does the Kentico Cloud Delivery SDK could be used in combination with:
+All of the applications [load the articles](#data-loading) from Kentico Cloud and display its titles in the output.
+
+This repository contains [show cases](#how-does-it-look-like), how does the [Kentico Cloud Delivery SDK](https://github.com/Enngage/kentico-cloud-js/tree/master/packages/delivery) could be used in combination with:
 
 * [Jest](https://jestjs.io) - [Readme](kc-jest/README.md)
 * [React](https://reactjs.org) - [Readme](kc-react/README.md)
 * [Vue.js](https://vuejs.org) - [Readme](kc-vue/README.md)
 * [Angular](https://angular.io/) - [Readme](kc-angular/README.md)
 
-All of the applications load the articles from Kentico Cloud and display its titles in the output.
+> If you want to take a look in detail - Open the appropriate folder for the description, or click *Readme* link.
 
 ## Data loading
 
@@ -16,8 +18,8 @@ Applications are using [Kentico Cloud Delivery SDK for Javascript](https://githu
 ```javascript
 import { DeliveryClient } from 'kentico-cloud-delivery';
 
-const client = new DeliveryClient({ 
-  projectId: "975bf280-fd91-488c-994c-2f04416e5ee3" 
+const client = new DeliveryClient({
+  projectId: "975bf280-fd91-488c-994c-2f04416e5ee3"
 });
 
 client.items()
@@ -59,5 +61,3 @@ npm start
 #### Angular
 
 ![Angular showcase](docs/angular-showcase.png)
-
-> If you want to take a look in detail - Open the appropriate folder for the description, or click *Readme* link.

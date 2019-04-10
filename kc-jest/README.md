@@ -21,7 +21,7 @@ This project was written from scratch using jus `npm init` command to showcase h
 
     This will generate `package.json` file ([more info](https://docs.npmjs.com/cli/init)).
 
-1. Add [.gitignore](.gitignore) file to avoid spamming repository by `node_modules` content
+1. Add [`.gitignore`](.gitignore) file to avoid spamming repository by `node_modules` content
 
 1. Install all required dependencies
 
@@ -54,7 +54,7 @@ This project was written from scratch using jus `npm init` command to showcase h
       describe('Delivery sdk', () => {
         it("load articles", async () => {
           const client = new DeliveryClient({
-             projectId: "975bf280-fd91-488c-994c-2f04416e5ee3" 
+             projectId: "975bf280-fd91-488c-994c-2f04416e5ee3"
              });
 
           const result = await client.items()
