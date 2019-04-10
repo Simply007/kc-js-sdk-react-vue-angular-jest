@@ -1,10 +1,96 @@
+# Kentico Cloud :heart: Angular
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to achieve this state
+
+1. Use [`react-app` initializer](https://docs.npmjs.com/cli/init) to create a application skeleton.
+
+    In the target folder
+
+    ```sh
+    npm init react-app kc-react
+    cd kc-react
+    ```
+
+1. Install Kentico Cloud JavaScript SDK
+
+    ```sh
+    npm install --save rxjs kentico-cloud-delivery
+    ```
+
+1. Extend [App component code](src/App.js) (final state)
+
+    1. Add required imports
+
+        ```javascript
+        import { DeliveryClient } from 'kentico-cloud-delivery';
+        ```
+
+    1. Initialize client
+
+        ```javascript
+        const client = new DeliveryClient({
+           projectId: "975bf280-fd91-488c-994c-2f04416e5ee3"
+        });
+        ```
+
+    1. Define [component initial state](https://reactjs.org/docs/react-without-es6.html#setting-the-initial-state) in the constructor
+
+        ```javascript
+        constructor(props) {
+          super(props);
+          this.state = {
+            loaded: false,
+            articles: []
+          };
+        }
+        ```
+
+    1. Load the data to the component state using the client in component [`componentDidMount` lifecycle method](https://reactjs.org/docs/react-component.html#componentdidmount).
+
+        ```javascript
+        componentDidMount() {
+          client.items()
+            .type("article")
+            .getPromise()
+            .then(result => {
+              console.log(result.items);
+              this.setState({
+                loaded: true,
+                articles: result.items
+              });
+            });
+        }
+        ```
+
+    1. Set the data to be rendered in the component markup in the [`render` method](https://reactjs.org/docs/react-component.html#render)
+
+        ```jsx
+        render() {
+          const articles = this.state.articles.map(article => (<li>{article.elements.title.value}</li>));
+          return (
+            <div className="App">
+              ...
+                {this.state.loaded && (<ul>{articles}</ul>)}
+              ...
+            </div>
+          );
+        }
+        ```
+
+> **Hurray! Kentico Cloud :heart: React!**
+
+---
+---
+
+## Application documentation
+
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -12,12 +98,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,7 +113,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -37,32 +123,32 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+#### Code Splitting
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+#### Analyzing the Bundle Size
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+#### Making a Progressive Web App
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+#### Advanced Configuration
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+#### Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+#### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

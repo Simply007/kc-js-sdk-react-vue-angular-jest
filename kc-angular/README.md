@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1. Install the [Angular cli](https://cli.angular.io) and generate the bootstrapped application (no Router was included)
 
-    In the repository root
+    In the target folder
 
     ```sh
     npm install -g @angular/cli
