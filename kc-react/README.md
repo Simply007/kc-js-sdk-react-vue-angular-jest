@@ -79,7 +79,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         }
         ```
 
+1. Run the app
+
+```sh
+npm start
+```
+
 > **Hurray! Kentico Cloud :heart: React!**
+
+![Rreact showcase](../docs/react-showcase.png)
 
 ---
 ---

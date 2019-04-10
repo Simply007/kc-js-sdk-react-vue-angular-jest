@@ -78,7 +78,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
         </section>
         ```
 
+1. Run the app
+
+```sh
+npm start
+```
+
 > **Hurray! Kentico Cloud :heart: Angular!**
+
+![Angular showcase](../docs/angular-showcase.png)
+
 
 ---
 ---

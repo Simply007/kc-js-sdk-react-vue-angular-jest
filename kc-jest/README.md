@@ -87,3 +87,5 @@ npm run test
 ```
 
 > **Hurray! Kentico Cloud :heart: Jest!**
+
+![Jest showcase](../docs/jest-showcase.png)

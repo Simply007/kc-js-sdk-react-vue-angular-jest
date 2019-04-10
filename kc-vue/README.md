@@ -81,7 +81,15 @@ This project was bootstrapped with [Vue CLI](https://cli.vuejs.org/) using VUE U
         </section
         ```
 
+1. Run the app
+
+```sh
+npm run serve
+```
+
 > **Hurray! Kentico Cloud :heart: Vue!**
+
+![Vue showcase](../docs/vue-showcase.png)
 
 ---
 ---
